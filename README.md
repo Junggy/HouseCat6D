@@ -12,7 +12,7 @@ Copy the folder `visualization` to the downloaded HouseCat6D folder.
 ### Object Pose Visualization
 
 One can visualize both rendered mask and 3D bounding box on entire frame given scene name and dataset directory.
-Make sure to put "obj_models_small_size_final" folder next to scene folders.
+Make sure to put `obj_models_small_size_final` folder next to scene folders.
 
 ```javascript 
 cd path/to/visualization
