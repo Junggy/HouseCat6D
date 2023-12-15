@@ -16,11 +16,11 @@ Make sure to put "obj_models_small_size_final" folder next to scene folders.
 
 ```javascript 
 cd path/to/visualization
+
 python vis_obj.py (path/to/dataset) (scene_name)
 ```
 For example if the script is located into dataset folder and want to visualize scene01, simply run 
 ```javascript 
-cd path/to/visualization
 python vis_obj.py ./ scene01
 ```
 
