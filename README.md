@@ -61,34 +61,26 @@ pip install scipy
 
 Note that the latest `gorilla-core` would fail. Modify `path/to/HouseCat6D` in the `VI-Net/config/housecat.yaml`.
 
-#### Training RGB-D
+#### Rotation branch:
 
-Rotation branch:
+Training with RGB-D 
 
 ```javascript
 cd VI-Net
 python train_housecat.py --gpus 0 --dataset housecat --mode r --config config/housecat.yaml
 ```
 
-Translation branch:
-
-```javascript
-python train_housecat.py --gpus 0 --dataset housecat --mode ts --config config/housecat.yaml
-```
-
-#### Training RGB+P-D
-
-Rotation branch:
+Training RGB+P-D
 
 ```javascript
 cd VI-Net
 python train_pol.py --gpus 0 --dataset housecat --mode r --config config/housecat.yaml
 ```
 
-Translation branch:
+#### Translation branch:
 
 ```javascript
-python train_pol.py --gpus 0 --dataset housecat --mode ts --config config/housecat.yaml
+python train_housecat.py --gpus 0 --dataset housecat --mode ts --config config/housecat.yaml
 ```
 
 ### Note
