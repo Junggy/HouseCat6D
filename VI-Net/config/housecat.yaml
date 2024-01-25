@@ -4,6 +4,7 @@ resolution: 64
 ds_rate: 2
 seq_length: -1
 img_length: -1
+log: /media/ymxlzgy/Data2/model_savedir/vi-net/log/housecat_pol
 
 max_epoch : 40
 
@@ -42,7 +43,7 @@ train_dataloader:
 test:
   sample_num: 2048
   data_dir: /media/ymxlzgy/FastData/housecat_v3
-  log_dir: /media/ymxlzgy/Data2/model_savedir/vi-net/log/housecat
+  log_dir: /media/ymxlzgy/Data2/model_savedir/vi-net/log/test
 
 
 per_val: 10

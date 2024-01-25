@@ -55,9 +55,7 @@ def init():
     cfg.mode = args.mode
     cfg.gpus = args.gpus
     cfg.checkpoint_epoch = args.checkpoint_epoch
-    log_dir = "/media/ymxlzgy/Data2/model_savedir/vi-net/log"
-    os.makedirs(log_dir, exist_ok=True)
-    log_dir_dataset = os.path.join(log_dir, args.dataset)
+    log_dir_dataset = cfg.log
     os.makedirs(log_dir_dataset, exist_ok=True)
     if cfg.mode == 'ts':
         cfg.log_dir = os.path.join(log_dir_dataset, 'PN2')
