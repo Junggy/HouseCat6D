@@ -93,7 +93,7 @@ if __name__ == "__main__":
         model = Net(cfg.resolution, cfg.ds_rate)
 
     else:
-        from model.PN2 import Net, Loss
+        from model.PN2_pol import Net, Loss
         model = Net(cfg.n_cls)
     if len(cfg.gpus) > 1:
         model = torch.nn.DataParallel(model, range(len(cfg.gpus.split(","))))

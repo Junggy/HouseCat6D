@@ -70,7 +70,7 @@ cd VI-Net
 python train_housecat.py --gpus 0 --dataset housecat --mode r --config config/housecat.yaml
 ```
 
-Training RGB+P-D
+Training with RGB+P-D
 
 ```javascript
 cd VI-Net
