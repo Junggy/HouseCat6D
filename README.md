@@ -86,4 +86,3 @@ python train_housecat.py --gpus 0 --dataset housecat --mode ts --config config/h
 ### Note
 
 HouseCat6D is released under CC BY 4.0.
-
