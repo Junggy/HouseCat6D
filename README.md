@@ -1,5 +1,5 @@
 # HouseCat6D Toolbox
-This repo provides some useful tools for visualizing the [HouseCat6D](https://sites.google.com/view/housecat6d) dataset. 
+This repo provides some useful tools for using the [HouseCat6D](https://sites.google.com/view/housecat6d) dataset. 
 
 ```javascript 
 conda create -n housecat python=3.8
@@ -34,7 +34,64 @@ cd path/to/visualization
 python vis_grasp.py --split train --scene 1 --dimentional 3D --ds
 ```
 
+### Additional Baseline Reference
+
+We provide the reimplementation of [VI-Net](https://github.com/JiehongLin/VI-Net) to show how to use HouseCat6D. 
+
+#### Installation
+
+```javascript
+conda create -n vi-net python=3.9
+conda activate vi-net
+```
+
+We tried with PyTorch 1.9 and CUDA 11.1.
+
+```
+cd VI-Net/lib/pointnet2/
+pip install .
+cd ../sphericalmap_utils/
+pip install .
+pip install gorilla-core==0.2.6.0
+pip install opencv-python
+pip install gpustat==1.0.0
+pip install --upgrade protobuf
+pip install scipy
+```
+
+Note that the latest `gorilla-core` would fail. Modify `path/to/HouseCat6D` in the `VI-Net/config/housecat.yaml`.
+
+#### Training RGB-D
+
+Rotation branch:
+
+```javascript
+cd VI-Net
+python train_housecat.py --gpus 0 --dataset housecat --mode r --config config/housecat.yaml
+```
+
+Translation branch:
+
+```javascript
+python train_housecat.py --gpus 0 --dataset housecat --mode ts --config config/housecat.yaml
+```
+
+#### Training RGB+P-D
+
+Rotation branch:
+
+```javascript
+cd VI-Net
+python train_pol.py --gpus 0 --dataset housecat --mode r --config config/housecat.yaml
+```
+
+Translation branch:
+
+```javascript
+python train_pol.py --gpus 0 --dataset housecat --mode ts --config config/housecat.yaml
+```
+
 ### Note
 
-The dataset is released under CC BY 4.0.
+HouseCat6D is released under CC BY 4.0.
 
