@@ -73,14 +73,23 @@ python train_housecat.py --gpus 0 --dataset housecat --mode r --config config/ho
 Training with RGB+P-D
 
 ```javascript
-cd VI-Net
 python train_pol.py --gpus 0 --dataset housecat --mode r --config config/housecat.yaml
 ```
 
 #### Translation branch:
 
+Training with RGB-D 
+
 ```javascript
+cd VI-Net
 python train_housecat.py --gpus 0 --dataset housecat --mode ts --config config/housecat.yaml
+```
+
+Training with RGB+P-D
+
+```javascript
+cd VI-Net
+python train_pol.py --gpus 0 --dataset housecat --mode ts --config config/housecat.yaml
 ```
 
 ### Note
