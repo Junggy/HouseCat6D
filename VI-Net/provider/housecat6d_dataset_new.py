@@ -359,18 +359,19 @@ class HouseCat6DTestDataset():
         rgb = rgb[:, :, ::-1] #480*640*3
 
         # pol
-        pol = cv2.imread(pol_path)[:, :, :3]
-        pol = pol[:, :, ::-1]
-        h,w = pol.shape[0], pol.shape[1]
+        pol_ = cv2.imread(pol_path)[:, :, :3]
+        pol_ = pol_[:, :, ::-1]
+        pol_ = pol_ / 255.0
+        h, w = pol_.shape[0], pol_.shape[1]
         half_h, half_w = int(h / 2), int(w / 2)
-        p1, p2, p3, p4 = pol[:half_h, :half_w], pol[:half_h, half_w:w], pol[half_h:h, :half_w], pol[half_h:h, half_w:w]
+        p1, p2, p3, p4 = pol_[:half_h, :half_w], pol_[:half_h, half_w:w], pol_[half_h:h, :half_w], pol_[half_h:h, half_w:w]
         intensity = (p1 + p2 + p3 + p4) / 4 + 1e-6
-        # intensity = np.linalg.norm(intensity, axis=-1)
+        intensity = np.linalg.norm(intensity, axis=-1)[:, :, np.newaxis]
         dop = np.linalg.norm(np.sqrt(np.square(p1 - p3) + np.square(p2 - p4)) / intensity, axis=-1)
         aop = np.arctan2(p2 - p4, p1 - p3)
         aop += (aop < 0) * np.pi
         aop = np.linalg.norm(aop, axis=-1)
-        pol_info = np.concatenate((dop[:, :, np.newaxis],dop[:, :, np.newaxis]), axis=-1)
+        pol_info = np.concatenate((dop[:, :, np.newaxis],aop[:, :, np.newaxis]), axis=-1)
 
         # pts
         intrinsics = np.loadtxt(os.path.join(img_path.split('rgb')[0], 'intrinsics.txt')).reshape(3, 3)
