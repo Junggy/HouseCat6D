@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./ImportedPhoto.734104285.343345.jpeg" alt="" width="600"/>
+  <img src="./ImportedPhoto.734104285.343345.jpeg" alt="" width="500"/>
 </div>
 
 # HouseCat6D Toolbox
