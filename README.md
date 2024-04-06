@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="./ImportedPhoto.734104285.343345.jpeg" alt="" width="600"/>
+</div>
+
 # HouseCat6D Toolbox
 This repo provides some useful tools for using the [HouseCat6D](https://sites.google.com/view/housecat6d) dataset [CVPR 2024 Highlight]. 
 
