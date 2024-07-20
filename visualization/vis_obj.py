@@ -29,7 +29,7 @@ def main():
 
     args = parser.parse_args()
     
-    folder_name = os.path.join(args.traj_name)
+    folder_name = os.path.join(args.base,args.traj_name)
     obj_folder = "obj_models_small_size_final"
 
     object_list = glob.glob(os.path.join(folder_name,"obj_pose_final")+"/*.txt")
@@ -64,7 +64,7 @@ def main():
         print("loading mesh (category, instance) :",each_key)
 
         obj_class, obj_name = each_key
-        obj_fname = os.path.join(obj_folder,obj_class,obj_class + "-" + obj_name + '.obj')
+        obj_fname = os.path.join(args.base,obj_folder,obj_class,obj_class + "-" + obj_name + '.obj')
 
         trimesh_obj = trimesh.load(obj_fname)
         bbox_scales.append(2*trimesh_obj.vertices.max(0))
