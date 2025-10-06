@@ -60,7 +60,8 @@ def main():
 
     # mesh
     bbox_scales = []
-    for each_key in objects.keys():
+    # for each_key in objects.keys():
+    for each_key in sorted(objects.keys()):
         print("loading mesh (category, instance) :",each_key)
 
         obj_class, obj_name = each_key
